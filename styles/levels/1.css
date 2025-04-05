@@ -1,0 +1,124 @@
+:root {
+  /* inner background-color */
+  --transparent-dark: rgba(15, 32, 39, 0.5);
+  --transparent-mid: rgba(84, 93, 96, 0.5);
+  --transparent-light: rgba(44, 83, 100, 0.5);
+  --linear-gradient: linear-gradient(to bottom, var(--transparent-dark), var(--transparent-mid), var(--transparent-light));
+  /* button */
+  --green-color: #97BC62;
+  --red-color: #C1191C; 
+  /* font size */
+   font-size: 12px;
+  /* border gradient */
+  --blue-gradient: linear-gradient(
+    to bottom,
+    #1BFFFF, 
+    #0EC5C5, 
+    #07E2E2, 
+    #42EDF1, 
+    #00BFFF  
+  );
+  /* text gradient */
+  --dark-gradient: linear-gradient(
+    to bottom, 
+    #1B1B1F,
+    #5A2331, 
+    #8E44AD  
+  );
+
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background-image: url('../../images/4.jpeg'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 66%; 
+  height: 66%;
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background: var(--linear-gradient);
+}
+.hub
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    gap: 5px;
+}
+main h1 {
+  display: flex;
+  align-items: flex-start;
+  font-family: 'Cinzel', serif;
+  font-size: 5rem;
+  text-align: center;
+  color: white;
+  top: 20px;
+  padding: 0px;
+  margin: 0px;
+  
+}
+#info {
+  font-family: 'Cinzel', serif;
+  text-align: left;
+  width: 75%; 
+  height: 75%;
+  background: var(--dark-gradient);
+  border: 10px solid transparent; 
+  border-image: var(--blue-gradient) 1;
+  border-image-slice: 1;  
+  color: white;
+}
+.timer-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-size: 1.2em;
+  z-index: 3; 
+}
+#exit {
+ font-family: 'Cinzel', serif;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: white;
+  background-color: var(--red-color);
+  border-radius: 50px;
+  margin: 0px;
+  padding: 10px 20px;
+}
+#submit {
+ font-family: 'Cinzel', serif;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: white;
+  background-color: var(--green-color);
+  border-radius: 50px;
+  margin: 0px;
+  padding: 10px 20px;
+}

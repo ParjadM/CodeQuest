@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/levels/1.css">
+    <title>LeveL 1</title>
+</head>
+<body>
+    <div class="container"></div>
+    <main class="hub">
+        <div class="timer-container" startTimer();>
+            Timer: <span id="timer">15:00</span>
+        </div>
+        <h1>LEVEL 1</h1>
+        <h2>You walked into the unknown wood! the only way out is to continue! Create a function that returns “Hello World”.</h2>
+        <textarea id="info">
+function greet() {
+    //enter text here
+}
+        </textarea>
+
+        <div>
+            <button id="exit" onclick="window.location.href='../../index.html';">EXIT</button>
+            <button id="submit" onclick="testFunction()">SUBMIT</button>
+        </div>
+    </main>
+    <script>
+        function testFunction() {
+            const textareaContent = document.getElementById("info").value;
+            try {
+                eval(textareaContent); 
+                const result = greet(); 
+                if (result.toLocaleLowerCase === "Hello World".toLocaleLowerCase) {
+                    window.location.href = '../../index.html';
+                } else {
+                    alert("Function output is incorrect. It returned: " + result);
+                }
+            } catch (error) {
+                alert("Error: Invalid function! " + error.message);
+            }
+        }
+
+
+        var timeLeft = 15 * 60; // 15 minutes in seconds
+
+        function startTimer() {
+            const timerElement = document.getElementById("timer");
+
+            const countdown = setInterval(() => {
+                const minutes = Math.floor(timeLeft / 60); 
+                const seconds = timeLeft % 60; 
+                timerElement.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+
+                if (timeLeft <= 0) {
+                    clearInterval(countdown); 
+                    alert("Time's up!"); 
+                } else {
+                    timeLeft--;
+                }
+            }, 1000); 
+        }
+
+        startTimer();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+:root {
+  --transparent-dark: rgba(15, 32, 39, 0.5);
+  --transparent-mid: rgba(84, 93, 96, 0.5);
+  --transparent-light: rgba(44, 83, 100, 0.5);
+  --linear-gradient: linear-gradient(to bottom, var(--transparent-dark), var(--transparent-mid), var(--transparent-light));
+  
+  --gradient-border: linear-gradient(#808080, #F5F5DC);
+
+
+  --color1: #007FFF; 
+  --color2: #4D70A4; 
+  --color3: #417296; 
+  --color4: #3C748F; 
+  --color5: #AFEEEE; 
+
+  --gradient: linear-gradient(to bottom, var(--color1), var(--color2), var(--color3), var(--color4), var(--color5));
+  --green-color: #97BC62;
+}
+:root {
+  font-size: 12px; 
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background-image: url('../images/1.jpeg'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 66%; 
+  height: 66%;
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background: var(--linear-gradient);
+}
+.hub
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    gap: 5px;
+}
+.hub h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 8rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+
+}
+#info {
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  width: 75%; 
+  height: 75%;
+  background: var(--gradient);
+  border: 10px solid transparent; 
+  border-image: linear-gradient(to right, #808080, #F5F5DC) 1;
+  border-image-slice: 1;  
+}
+button {
+  font-family: 'Cinzel', serif;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: white;
+  background-color: var(--green-color);
+  border-radius: 50px;
+  margin: 0px;
+  padding: 10px 20px;
+}
