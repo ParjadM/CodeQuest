@@ -45,23 +45,26 @@ function isPalindrome(word) {
         }
 
 
-        var timeLeft = 15 * 60;
+        var timeLeft = parseInt(localStorage.getItem("timeLeft")) || 15 * 60;
+
 
         function startTimer() {
             const timerElement = document.getElementById("timer");
 
             const countdown = setInterval(() => {
-                const minutes = Math.floor(timeLeft / 60); 
-                const seconds = timeLeft % 60; 
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
                 timerElement.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 
                 if (timeLeft <= 0) {
-                    clearInterval(countdown); 
-                    alert("Time's up!"); 
+                    clearInterval(countdown);
+                    alert("Time's up!");
+                    localStorage.removeItem("timeLeft");
                 } else {
                     timeLeft--;
+                    localStorage.setItem("timeLeft", timeLeft); 
                 }
-            }, 1000); 
+            }, 1000);
         }
 
         startTimer();

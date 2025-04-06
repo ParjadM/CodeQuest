@@ -31,37 +31,41 @@ function greet() {
             try {
                 eval(textareaContent); 
                 const result = greet(); 
-                if (result.toLocaleLowerCase === "Hello World".toLocaleLowerCase) {
+                if (result.toLowerCase() === "Hello World".toLowerCase()) {
                     window.location.href = './2.html';
                 } else {
-                    alert("Function output is incorrect. It returned: " + result);
+                    window.location.href = '../Mistake/mistake1.html';
                 }
             } catch (error) {
-                alert("Error: Invalid function! " + error.message);
+                window.location.href = '../Mistake/mistake1.html';
             }
         }
 
 
-        var timeLeft = 15 * 60;
+        var timeLeft = parseInt(localStorage.getItem("timeLeft")) || 15 * 60;
+
 
         function startTimer() {
             const timerElement = document.getElementById("timer");
 
             const countdown = setInterval(() => {
-                const minutes = Math.floor(timeLeft / 60); 
-                const seconds = timeLeft % 60; 
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
                 timerElement.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 
                 if (timeLeft <= 0) {
-                    clearInterval(countdown); 
-                    alert("Time's up!"); 
+                    clearInterval(countdown);
+                    alert("Time's up!");
+                    localStorage.removeItem("timeLeft");
                 } else {
                     timeLeft--;
+                    localStorage.setItem("timeLeft", timeLeft); 
                 }
-            }, 1000); 
+            }, 1000);
         }
 
         startTimer();
+
 
     </script>
 </body>
