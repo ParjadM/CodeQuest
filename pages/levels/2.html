@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../styles/levels/1.css">
-    <title>LeveL 1</title>
+    <link rel="stylesheet" href="../../styles/levels/2.css">
+    <title>LeveL 2</title>
 </head>
 <body>
     <div class="container"></div>
@@ -12,10 +12,10 @@
         <div class="timer-container" startTimer();>
             Timer: <span id="timer">15:00</span>
         </div>
-        <h1>LEVEL 1</h1>
-        <h2>You walked into the unknown wood! the only way out is to continue! Create a function that returns “Hello World”.</h2>
+        <h1>LEVEL 2</h1>
+        <h2>Trying to find the right path in the mysterious wood, however you need more information. Create a function that returns the sum of two variables!</h2>
         <textarea id="info">
-function greet() {
+function addTwoNumbers(a, b) {
     //enter text here
 }
         </textarea>
@@ -30,9 +30,10 @@ function greet() {
             const textareaContent = document.getElementById("info").value;
             try {
                 eval(textareaContent); 
-                const result = greet(); 
-                if (result.toLocaleLowerCase === "Hello World".toLocaleLowerCase) {
-                    window.location.href = './2.html';
+                const result = addTwoNumbers(2, 3); 
+                const result2 = addTwoNumbers(5, 5);
+                if (result === 5 && result2 === 10) {
+                    window.location.href = './3.html';
                 } else {
                     alert("Function output is incorrect. It returned: " + result);
                 }

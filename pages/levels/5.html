@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../styles/levels/1.css">
-    <title>LeveL 1</title>
+    <link rel="stylesheet" href="../../styles/levels/5.css">
+    <title>LeveL 5</title>
 </head>
 <body>
     <div class="container"></div>
@@ -12,10 +12,10 @@
         <div class="timer-container" startTimer();>
             Timer: <span id="timer">15:00</span>
         </div>
-        <h1>LEVEL 1</h1>
-        <h2>You walked into the unknown wood! the only way out is to continue! Create a function that returns “Hello World”.</h2>
+        <h1>LEVEL 5</h1>
+        <h2>you can see the light again! however you need to overcome your biggest obstacle! find out if the word is a palindrome, and return a Boolean!</h2>
         <textarea id="info">
-function greet() {
+function isPalindrome(word) {
     //enter text here
 }
         </textarea>
@@ -30,9 +30,12 @@ function greet() {
             const textareaContent = document.getElementById("info").value;
             try {
                 eval(textareaContent); 
-                const result = greet(); 
-                if (result.toLocaleLowerCase === "Hello World".toLocaleLowerCase) {
-                    window.location.href = './2.html';
+                const word1 = "radar";
+                const word2 = "world"; 
+                const result = isPalindrome(word1); 
+                const result2 = isPalindrome(word2);
+                if (result === true && result2 === false) {
+                    window.location.href = '../../index.html';
                 } else {
                     alert("Function output is incorrect. It returned: " + result);
                 }

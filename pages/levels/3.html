@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../styles/levels/1.css">
-    <title>LeveL 1</title>
+    <link rel="stylesheet" href="../../styles/levels/3.css">
+    <title>LeveL 3</title>
 </head>
 <body>
     <div class="container"></div>
@@ -12,10 +12,10 @@
         <div class="timer-container" startTimer();>
             Timer: <span id="timer">15:00</span>
         </div>
-        <h1>LEVEL 1</h1>
-        <h2>You walked into the unknown wood! the only way out is to continue! Create a function that returns “Hello World”.</h2>
+        <h1>LEVEL 3</h1>
+        <h2>you found something in the woods! however it’s locked! to unlock it! find all EVEN number in the array and return those values in an array!</h2>
         <textarea id="info">
-function greet() {
+function findEvenNumbers(arr) {
     //enter text here
 }
         </textarea>
@@ -30,9 +30,12 @@ function greet() {
             const textareaContent = document.getElementById("info").value;
             try {
                 eval(textareaContent); 
-                const result = greet(); 
-                if (result.toLocaleLowerCase === "Hello World".toLocaleLowerCase) {
-                    window.location.href = './2.html';
+                const arr = [1, 2, 3, 4, 5];
+                const arr1 = [1, 3, 5, 10]; 
+                const result = findEvenNumbers(arr); 
+                const result2 = findEvenNumbers(arr1);
+                if ([2, 4].every(value => result.includes(value)) && [10].every(value => result2.includes(value))){
+                    window.location.href = './4.html';
                 } else {
                     alert("Function output is incorrect. It returned: " + result);
                 }
