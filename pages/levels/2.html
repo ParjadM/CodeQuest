@@ -33,17 +33,17 @@ function addTwoNumbers(a, b) {
                 const result = addTwoNumbers(2, 3); 
                 const result2 = addTwoNumbers(5, 5);
                 if (result === 5 && result2 === 10) {
-                    window.location.href = './3.html';
+                    window.location.href = '../Passed/passed3.html';
                 } else {
-                    alert("Function output is incorrect. It returned: " + result);
+                    window.location.href = '../Mistake/mistake2.html';
                 }
             } catch (error) {
-                alert("Error: Invalid function! " + error.message);
+                window.location.href = '../Mistake/mistake2.html';
             }
         }
 
 
-        var timeLeft = parseInt(localStorage.getItem("timeLeft")) || 15 * 60;
+        var timeLeft = parseInt(localStorage.getItem("timeLeft2")) || 15 * 60;
 
 
         function startTimer() {
@@ -57,10 +57,10 @@ function addTwoNumbers(a, b) {
                 if (timeLeft <= 0) {
                     clearInterval(countdown);
                     alert("Time's up!");
-                    localStorage.removeItem("timeLeft");
+                    localStorage.removeItem("timeLeft2");
                 } else {
                     timeLeft--;
-                    localStorage.setItem("timeLeft", timeLeft); 
+                    localStorage.setItem("timeLeft2", timeLeft); 
                 }
             }, 1000);
         }

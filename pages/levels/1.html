@@ -32,7 +32,7 @@ function greet() {
                 eval(textareaContent); 
                 const result = greet(); 
                 if (result.toLowerCase() === "Hello World".toLowerCase()) {
-                    window.location.href = './2.html';
+                    window.location.href = '../Passed/passed2.html';
                 } else {
                     window.location.href = '../Mistake/mistake1.html';
                 }
@@ -42,7 +42,7 @@ function greet() {
         }
 
 
-        var timeLeft = parseInt(localStorage.getItem("timeLeft")) || 15 * 60;
+        var timeLeft = parseInt(localStorage.getItem("timeLeft1")) || 15 * 60;
 
 
         function startTimer() {
@@ -55,11 +55,11 @@ function greet() {
 
                 if (timeLeft <= 0) {
                     clearInterval(countdown);
-                    alert("Time's up!");
-                    localStorage.removeItem("timeLeft");
+                    window.location.href = '../failed.html';
+                    localStorage.removeItem("timeLeft1");
                 } else {
                     timeLeft--;
-                    localStorage.setItem("timeLeft", timeLeft); 
+                    localStorage.setItem("timeLeft1", timeLeft); 
                 }
             }, 1000);
         }

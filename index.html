@@ -16,5 +16,14 @@
         <button onclick="window.location.href='./pages/about.html';">ABOUT</button>
         <button onclick="window.location.href='./pages/levels/1.html';">PLAY</button>
     </main>
+    <script>
+        function createLocalStorage() {
+            for (var i = 0; i < 5; i++) {
+                localStorage.setItem("timeLeft" + (i + 1), 15 * 60);
+            }
+            console.log("Local storage created with initial values.");
+        }
+        createLocalStorage();
+    </script>
 </body>
 </html>

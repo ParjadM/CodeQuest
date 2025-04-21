@@ -35,17 +35,17 @@ function findEvenNumbers(arr) {
                 const result = findEvenNumbers(arr); 
                 const result2 = findEvenNumbers(arr1);
                 if ([2, 4].every(value => result.includes(value)) && [10].every(value => result2.includes(value))){
-                    window.location.href = './4.html';
+                    window.location.href = '../Passed/passed4.html';
                 } else {
-                    alert("Function output is incorrect. It returned: " + result);
+                    window.location.href = '../Mistake/mistake3.html';
                 }
             } catch (error) {
-                alert("Error: Invalid function! " + error.message);
+                window.location.href = '../Mistake/mistake3.html';
             }
         }
 
 
-        var timeLeft = parseInt(localStorage.getItem("timeLeft")) || 15 * 60;
+        var timeLeft = parseInt(localStorage.getItem("timeLeft3")) || 15 * 60;
 
 
         function startTimer() {
@@ -59,10 +59,10 @@ function findEvenNumbers(arr) {
                 if (timeLeft <= 0) {
                     clearInterval(countdown);
                     alert("Time's up!");
-                    localStorage.removeItem("timeLeft");
+                    localStorage.removeItem("timeLeft3");
                 } else {
                     timeLeft--;
-                    localStorage.setItem("timeLeft", timeLeft); 
+                    localStorage.setItem("timeLeft3", timeLeft); 
                 }
             }, 1000);
         }
